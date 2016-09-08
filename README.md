@@ -92,13 +92,6 @@ Additionally, for each platform:
 
 #### iOS
 
-Ensure the following libraries are added to your project's .xcodeproj:
-
-    AdSupport.framework
-    libsqlite3.tbd
-    libz.tbd
-    SystemConfiguration.framework
-
 If compiling against iOS 9 SDK, add an App Transport Security exception to Info.plist:
 
     <key>NSAppTransportSecurity</key>
@@ -150,11 +143,6 @@ Afterwards, simply call the following after the integration code in the previous
 
 [Follow these instructions to set up push notifications for your app.](http://docs.localytics.com/dev/android.html#push-messaging-android)
 
-Next, copy the Google Play Services library and add it as a dependency to your project:
-
-1. Copy the folder \<ANDROID_SDK_DIR\>/extras/google/google\_play\_services\_lib/ to \<YOUR_PROJECT\>/platforms/android/
-2. Add an extra line to \<YOUR_PROJECT\>/platforms/android/project.properties: "android.library.reference.2=google-play-services_lib
-
 In your AndroidManifest.xml, ensure the following are added _before_ your \<application\> tag:
 
 >*Note*: replace YOUR.PACKAGE.NAME with your package name, ie, com.yourcompany.yourapp
@@ -171,13 +159,29 @@ Inside your \<application\> tag, add:
 >*Note*: replace YOUR.PACKAGE.NAME with your package name and \<YOUR_PUSH_ID\> with your GCM push id. **The "\\ " before the push id is intentional (ie. android:value="\ 1234567")**.
 
 	<activity android:name="com.localytics.android.PushTrackingActivity" />
-	<receiver android:name="com.localytics.android.PushReceiver" android:permission="com.google.android.c2dm.permission.SEND">
-		<intent-filter>
-			<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-			<action android:name="com.google.android.c2dm.intent.RECEIVE" />
-			<category android:name="YOUR.PACKAGE.NAME" />
-		</intent-filter>
-	</receiver>
+	<receiver
+        android:name="com.google.android.gms.gcm.GcmReceiver"
+        android:exported="true"
+        android:permission="com.google.android.c2dm.permission.SEND" >
+        <intent-filter>
+            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            <category android:name="YOUR.PACKAGE.NAME" />
+        </intent-filter>
+    </receiver>
+    <service
+        android:name="com.localytics.android.GcmListenerService"
+        android:exported="false" >
+        <intent-filter>
+            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        </intent-filter>
+    </service>
+    <service
+        android:name="com.localytics.android.InstanceIDListenerService"
+        android:exported="false" >
+        <intent-filter>
+            <action android:name="com.google.android.gms.iid.InstanceID" />
+        </intent-filter>
+    </service>
     <meta-data android:name="com.localytics.android_push_sender_id" android:value="\ <YOUR_PUSH_ID>" />
 
 
