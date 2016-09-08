@@ -7,7 +7,7 @@ This version of the PhoneGap/Cordova SDK wraps v4.1.0 of the Localytics SDK
 
 ## Supported Versions
 
-The PhoneGap/Cordova SDK was tested on Cordova v6.1.1 and 6.2.0
+The PhoneGap/Cordova SDK was tested on PhoneGap cli-5.2.0
 
 ## Installation
 
