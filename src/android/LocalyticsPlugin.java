@@ -463,7 +463,7 @@ public class LocalyticsPlugin extends CordovaPlugin {
             return true;
         } else if (action.equals("setSessionTimeoutInterval")) {
             int seconds = args.getInt(0);
-            Localytics.setSessionTimeoutInterval(seconds);
+            Localytics.setOption("session_timeout",seconds);
             callbackContext.success();
             return true;
         } else if (action.equals("getSessionTimeoutInterval")) {
