@@ -409,7 +409,7 @@ public class LocalyticsPlugin extends CordovaPlugin {
             return true;
         } else if (action.equals("setPushDisabled")) {
             boolean enabled = args.getBoolean(0);
-            Localytics.setPushDisabled(enabled);
+            Localytics.setNotificationsDisabled(enabled);
             callbackContext.success();
             return true;
         } else if (action.equals("isPushDisabled")) {
