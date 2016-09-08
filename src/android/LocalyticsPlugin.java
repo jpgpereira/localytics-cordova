@@ -466,14 +466,6 @@ public class LocalyticsPlugin extends CordovaPlugin {
             Localytics.setOption("session_timeout",seconds);
             callbackContext.success();
             return true;
-        } else if (action.equals("getSessionTimeoutInterval")) {
-            cordova.getThreadPool().execute(new Runnable() {
-                public void run() {
-                    long timeout = Localytics.getSessionTimeoutInterval();
-                    callbackContext.success(Long.valueOf(timeout).toString());
-                }
-            });
-            return true;
         } else if (action.equals("getInstallId")) {
             cordova.getThreadPool().execute(new Runnable() {
                 public void run() {
