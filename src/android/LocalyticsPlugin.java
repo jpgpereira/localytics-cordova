@@ -385,7 +385,7 @@ public class LocalyticsPlugin extends CordovaPlugin {
                 Location location = new Location("");
 				location.setLatitude(args.getDouble(0));
 				location.setLongitude(args.getDouble(1));
-				
+
             	Localytics.setLocation(location);
             	callbackContext.success();
             } else {
@@ -415,7 +415,7 @@ public class LocalyticsPlugin extends CordovaPlugin {
         } else if (action.equals("isPushDisabled")) {
             cordova.getThreadPool().execute(new Runnable() {
                 public void run() {
-                    boolean enabled = Localytics.isPushDisabled();
+                    boolean enabled = Localytics.areNotificationsDisabled();
                     callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, enabled));
                 }
             });
@@ -489,7 +489,7 @@ public class LocalyticsPlugin extends CordovaPlugin {
                     callbackContext.success(result);
                 }
             });
-            
+
             return true;
         } else if (action.equals("getLibraryVersion")) {
             cordova.getThreadPool().execute(new Runnable() {
