@@ -215,12 +215,6 @@ Localytics.prototype.setLocationMonitoringEnabled = function (enabled) {
 	cordova.exec(null, null, "LocalyticsPlugin", "setLocationMonitoringEnabled", [enabled]);
 }
 
-// Gets location monitoring status
-// successCallback = callback function for result
-// Localytics.prototype.isLocationMonitoringEnabled = function (successCallback) {
-// 	cordova.exec(successCallback, null, "LocalyticsPlugin", "isLocationMonitoringEnabled", []);
-// }
-
 
 /*******************
  * Developer Options
