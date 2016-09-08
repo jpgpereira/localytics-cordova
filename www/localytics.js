@@ -110,8 +110,8 @@ Localytics.prototype.isOptedOut = function (successCallback) {
  Localytics.prototype.deleteProfileAttribute = function (name, scope) {
 	cordova.exec(null, null, "LocalyticsPlugin", "deleteProfileAttribute", [name, scope]);
 }
- 
- 
+
+
 /*******************
  * User Information
  ******************/
@@ -209,6 +209,17 @@ Localytics.prototype.dismissCurrentInAppMessage = function () {
 	cordova.exec(null, null, "LocalyticsPlugin", "dismissCurrentInAppMessage", []);
 }
 
+// Toggles location monitoring enabled
+// enabled = boolean
+Localytics.prototype.setLocationMonitoringEnabled = function (enabled) {
+	cordova.exec(null, null, "LocalyticsPlugin", "setLocationMonitoringEnabled", [enabled]);
+}
+
+// Gets location monitoring status
+// successCallback = callback function for result
+Localytics.prototype.isLocationMonitoringEnabled = function (successCallback) {
+	cordova.exec(successCallback, null, "LocalyticsPlugin", "isLocationMonitoringEnabled", []);
+}
 
 
 /*******************
@@ -234,9 +245,9 @@ Localytics.prototype.setSessionTimeoutInterval = function (seconds) {
 
 // Gets session timeout interval
 // successCallback = callback function for result
-Localytics.prototype.getSessionTimeoutInterval = function (successCallback) {
-    cordova.exec(successCallback, null, "LocalyticsPlugin", "getSessionTimeoutInterval", []);
-}
+// Localytics.prototype.getSessionTimeoutInterval = function (successCallback) {
+//     cordova.exec(successCallback, null, "LocalyticsPlugin", "getSessionTimeoutInterval", []);
+// }
 
 // Gets install id
 // successCallback = callback function for result

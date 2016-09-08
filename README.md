@@ -207,5 +207,45 @@ The third parameter of tagEvent is used to increase customer lifetime value (CLV
 
 	Localytics.tagEvent("Purchase Completed", { "Item Name" : "Power Up" }, 499);
 
+
+### Places
+
+#### iOS
+
+[Follow these instructions to set up places for your app.]( http://docs.localytics.com/dev/ios.html#places-ios)
+
+Afterwards, simply call the following after the integration code in the previous step.
+
+	Localytics.setLocationMonitoringEnabled(boolean);
+
+#### Android
+
+[Follow these instructions to set up places for your app.](http://docs.localytics.com/dev/android.html#places-android)
+
+In your AndroidManifest.xml, ensure the following are added _before_ your \<application\> tag:
+
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+Inside your \<application\> tag, add:
+
+	<meta-data
+	android:name="com.google.android.gms.version"
+	android:value="@integer/google_play_services_version" />
+	<service android:name="com.localytics.android.GeofenceTransitionsService"/>
+	<receiver android:name="com.localytics.android.BootReceiver" >
+		<intent-filter>
+			<action android:name="android.intent.action.BOOT_COMPLETED" />
+		</intent-filter>
+	</receiver>
+	<activity android:name="com.localytics.android.PushTrackingActivity"/>
+
+	>*Note*: You may have already included the **PushTrackingActivity** if you have integrated push messaging.
+
+
+Afterwards, simply call the following function after the integration code in the previous step.
+
+	Localytics.setLocationMonitoringEnabled(boolean);
+
 ## SampleApp
 The Cordova app found under SampleApp demonstrates a list of functional APIs that can be called via the JavaScript interface. Update "LocalyticsAppKey" and "LOCALYTICS_APP_KEY" for their respective platforms to easily test out the calls.

@@ -491,6 +491,19 @@ public class LocalyticsPlugin extends CordovaPlugin {
                 }
             });
             return true;
+        } else if (action.equals("setLocationMonitoringEnabled")) {
+            boolean enabled = args.getBoolean(0);
+            Localytics.setLocationMonitoringEnabled(enabled);
+            callbackContext.success();
+            return true;
+        } else if (action.equals("isLocationMonitoringEnabled")) {
+            cordova.getThreadPool().execute(new Runnable() {
+                public void run() {
+                    boolean enabled = Localytics.isLocationMonitoringEnabled();
+                    callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, enabled));
+                }
+            });
+            return true;
         }
         return false;
     }
