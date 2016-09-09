@@ -5,6 +5,8 @@ Localytics for PhoneGap/Cordova
 
 This version of the PhoneGap/Cordova SDK wraps v4.1.0 of the Localytics SDK
 
+>*Note*: This is not the official PhoneGap/Cordova SDK of the Localytics SDK, was just an update from version 3.8.x
+
 ## Supported Versions
 
 The PhoneGap/Cordova SDK was tested on PhoneGap cli-5.2.0
@@ -210,6 +212,8 @@ The third parameter of tagEvent is used to increase customer lifetime value (CLV
 
 ### Places
 
+>*Note*: This wasn't tested yet, so proceed with cautious.
+
 #### iOS
 
 [Follow these instructions to set up places for your app.]( http://docs.localytics.com/dev/ios.html#places-ios)
@@ -240,7 +244,7 @@ Inside your \<application\> tag, add:
 	</receiver>
 	<activity android:name="com.localytics.android.PushTrackingActivity"/>
 
-	>*Note*: You may have already included the **PushTrackingActivity** if you have integrated push messaging.
+>*Note*: You may have already included the **PushTrackingActivity** if you have integrated push messaging.
 
 
 Afterwards, simply call the following function after the integration code in the previous step.
