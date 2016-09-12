@@ -19,7 +19,7 @@
                 <param name="ios-package" value="LocalyticsPlugin"/>
             </feature>
         </config-file>
-        <source-file src="src/ios/Localytics.framework"/>
+        <source-file src="src/ios/Localytics.framework" custom="true" />
 
         <framework src="libsqlite3.dylib" />
         <framework src="libz.dylib" />
