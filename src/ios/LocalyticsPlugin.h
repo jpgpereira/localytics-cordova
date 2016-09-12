@@ -46,9 +46,11 @@
 - (void)getInAppMessageDismissButtonLocation:(CDVInvokedUrlCommand *)command;
 - (void)triggerInAppMessage:(CDVInvokedUrlCommand *)command;
 - (void)dismissCurrentInAppMessage:(CDVInvokedUrlCommand *)command;
+- (void)setLocationMonitoringEnabled:(CDVInvokedUrlCommand *)command;
 
 - (void)setLoggingEnabled:(CDVInvokedUrlCommand *)command;
 - (void)isLoggingEnabled:(CDVInvokedUrlCommand *)command;
+- (void)setSessionTimeoutInterval:(CDVInvokedUrlCommand *)command;
 - (void)getInstallId:(CDVInvokedUrlCommand *)command;
 - (void)getAppKey:(CDVInvokedUrlCommand *)command;
 - (void)getLibraryVersion:(CDVInvokedUrlCommand *)command;

@@ -401,6 +401,13 @@ static NSDictionary* launchOptions;
     [Localytics dismissCurrentInAppMessage];
 }
 
+- (void)setLocationMonitoringEnabled:(CDVInvokedUrlCommand *)command {
+    NSNumber *enabled = [command argumentAtIndex:0];
+    if (enabled && [enabled isKindOfClass:[NSNumber class]]) {
+        [Localytics setLocationMonitoringEnabled:[enabled boolValue]];
+    }
+}
+
 
 #pragma mark Developer Options
 

@@ -461,11 +461,6 @@ public class LocalyticsPlugin extends CordovaPlugin {
                 }
             });
             return true;
-        } else if (action.equals("setSessionTimeoutInterval")) {
-            int seconds = args.getInt(0);
-            Localytics.setOption("session_timeout",seconds);
-            callbackContext.success();
-            return true;
         } else if (action.equals("getInstallId")) {
             cordova.getThreadPool().execute(new Runnable() {
                 public void run() {
@@ -496,7 +491,7 @@ public class LocalyticsPlugin extends CordovaPlugin {
             Localytics.setLocationMonitoringEnabled(enabled);
             callbackContext.success();
             return true;
-        } 
+        }
         return false;
     }
 
