@@ -53,7 +53,7 @@ BOOL MethodSwizzle(Class clazz, SEL originalSelector, SEL overrideSelector)
 
 - (void) localytics_swizzled_Application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    [Localytics handlePushNotificationOpened:userInfo];
+    [Localytics handleNotification:userInfo];
     completionHandler(UIBackgroundFetchResultNoData);
 
     if (localyticsDidReceiveRemoteNotificationSwizzled) {
@@ -102,7 +102,7 @@ static NSDictionary* launchOptions;
 + (void)onDidFinishLaunchingNotification:(NSNotification *)notification {
     launchOptions = notification.userInfo;
     if (launchOptions && launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey]) {
-        [Localytics handlePushNotificationOpened: launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey]];
+        [Localytics handleNotification: launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey]];
     }
 }
 

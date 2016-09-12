@@ -6,7 +6,7 @@
 
 #import <Cordova/CDVPlugin.h>
 
-@interface LocalyticsPlugin : CDVPlugin <Localytics>
+@interface LocalyticsPlugin : CDVPlugin
 
 - (void)integrate:(CDVInvokedUrlCommand *)command;
 - (void)autoIntegrate:(CDVInvokedUrlCommand *)command;
