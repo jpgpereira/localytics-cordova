@@ -4,9 +4,7 @@
 //  Copyright 2015 Localytics. All rights reserved.
 //
 
-#import <Localytics/Localytics.h>
 #import <Cordova/CDVPlugin.h>
-#import "AppDelegate.h"
 
 @interface LocalyticsPlugin : CDVPlugin <Localytics>
 

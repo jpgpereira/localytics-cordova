@@ -4,7 +4,9 @@
 //  Copyright 2015 Localytics. All rights reserved.
 //
 
+#import <Localytics/Localytics-Framework.h>
 #import "LocalyticsPlugin.h"
+#import "AppDelegate.h"
 #import <objc/runtime.h>
 
 #define PROFILE_SCOPE_ORG @"org"
