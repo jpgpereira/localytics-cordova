@@ -6,7 +6,7 @@
 
 #import "AppDelegate.h"
 #import "LocalyticsPlugin.h"
-#import "Localytics.h"
+#import "Localytics/Headers/Localytics.h"
 #import <objc/runtime.h>
 
 #define PROFILE_SCOPE_ORG @"org"
