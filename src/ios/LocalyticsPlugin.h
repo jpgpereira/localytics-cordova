@@ -49,8 +49,6 @@
 
 - (void)setLoggingEnabled:(CDVInvokedUrlCommand *)command;
 - (void)isLoggingEnabled:(CDVInvokedUrlCommand *)command;
-- (void)setSessionTimeoutInterval:(CDVInvokedUrlCommand *)command;
-// - (void)getSessionTimeoutInterval:(CDVInvokedUrlCommand *)command;
 - (void)getInstallId:(CDVInvokedUrlCommand *)command;
 - (void)getAppKey:(CDVInvokedUrlCommand *)command;
 - (void)getLibraryVersion:(CDVInvokedUrlCommand *)command;
