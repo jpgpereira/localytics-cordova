@@ -5,15 +5,23 @@ Localytics for PhoneGap/Cordova
 
 This version of the PhoneGap/Cordova SDK wraps v4.1.0 of the Localytics SDK
 
->*Note*: This is not the official PhoneGap/Cordova SDK of the Localytics SDK, was just an update from version 3.8.x
+>*Note*: This is not the official PhoneGap/Cordova SDK of the Localytics SDK, was just an update made by me to use the latest SDK for deep linking push notifications and in-app messages on Android. It wasn't tested on iOS yet
 
 ## Supported Versions
 
 The PhoneGap/Cordova SDK was tested on PhoneGap cli-5.2.0
 
-## Installation
+## Installation for Cordova
 
-	cordova plugin add localytics-cordova
+>*Note*: Not tested
+
+	cordova plugin add https://github.com/jpgpereira/localytics-cordova.git
+
+## Installation for PhoneGap Build
+
+Add the following to your .xml config file.
+
+	<gap:plugin spec="https://github.com/jpgpereira/localytics-cordova.git" source="git" />
 
 ## Integration
 
@@ -129,7 +137,7 @@ Ensure the following ReferralReceiver is added to AndroidManifest.xml within the
 
 iOS uses Apple Push Notification (APN) while Android uses Google Cloud Messaging (GCM). Follow the instructions for each respective push notification service to set up the necessary configurations and upload the certificate to the Localytics Dashboard before continuing with these instructions.
 
->*Note*: In-App messaging is not supported on Android at this time. The native Android implementation to handle in-app messaging makes use of the FragmentActivity class that is incompatible with the primary CordovaActivity class that holds the Webview.
+>*Note*: In-App messaging is now supported on Android with this updated SDK.
 
 #### iOS
 
@@ -212,7 +220,7 @@ The third parameter of tagEvent is used to increase customer lifetime value (CLV
 
 ### Places
 
->*Note*: This wasn't tested yet, so proceed with cautious.
+>*Note*: This feature isn't available for all teams and wasn't tested yet, so proceed with cautious.
 
 #### iOS
 
@@ -253,3 +261,5 @@ Afterwards, simply call the following function after the integration code in the
 
 ## SampleApp
 The Cordova app found under SampleApp demonstrates a list of functional APIs that can be called via the JavaScript interface. Update "LocalyticsAppKey" and "LOCALYTICS_APP_KEY" for their respective platforms to easily test out the calls.
+
+>*Note*: This sample app remains the same using the oldest 3.8.x versions.
