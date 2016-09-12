@@ -419,21 +419,6 @@ static NSDictionary* launchOptions;
     }];
 }
 
-- (void)setSessionTimeoutInterval:(CDVInvokedUrlCommand *)command {
-    NSNumber *timeout = [command argumentAtIndex:0];
-    if (timeout) {
-        [Localytics setSessionTimeoutInterval:[timeout doubleValue]];
-    }
-}
-
-// - (void)getSessionTimeoutInterval:(CDVInvokedUrlCommand *)command {
-//     [self.commandDelegate runInBackground:^{
-//         NSTimeInterval value = [Localytics sessionTimeoutInterval];
-//         CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDouble:value];
-//         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-//     }];
-// }
-
 - (void)getInstallId:(CDVInvokedUrlCommand *)command {
     [self.commandDelegate runInBackground:^{
         NSString *value = [Localytics installId];
