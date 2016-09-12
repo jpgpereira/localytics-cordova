@@ -15,8 +15,8 @@
 
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="LocalyticsPlugin">
-                <param name="ios-package" value="LocalyticsPlugin"/>
+            <feature name="Localytics">
+                <param name="ios-package" value="Localytics"/>
             </feature>
         </config-file>
         <source-file src="src/ios/Localytics.framework" custom="true" />
