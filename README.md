@@ -5,7 +5,7 @@ Localytics for PhoneGap/Cordova
 
 This version of the PhoneGap/Cordova SDK wraps v4.1.0 of the Localytics SDK
 
->*Note*: This is not the official PhoneGap/Cordova SDK of the Localytics SDK, was just an update made by me to use the latest SDK for deep linking push notifications and in-app messages on Android. It wasn't tested on iOS yet
+>*Note*: This is not the official PhoneGap/Cordova SDK of the Localytics SDK, was just an update made by me to use the latest SDK for deep linking push notifications and in-app messages on Android. It's not working on iOS for now
 
 ## Supported Versions
 
